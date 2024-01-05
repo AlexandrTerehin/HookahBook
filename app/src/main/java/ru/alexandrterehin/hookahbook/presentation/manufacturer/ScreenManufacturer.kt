@@ -8,13 +8,16 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import ru.alexandrterehin.hookahbook.app.theme.dimen16
 import ru.alexandrterehin.hookahbook.data.model.manufacturer.ManufacturerDto
+import ru.alexandrterehin.hookahbook.provider.AppResourceProvider
+import ru.alexandrterehin.hookahbook.provider.ResourceProvider
 
 @Composable
-fun ScreenManufacturer() {
+fun ScreenManufacturer(providerResources: ResourceProvider) {
     val list = listOf(
         ManufacturerDto.init(),
         ManufacturerDto.init(),
@@ -61,5 +64,5 @@ fun ScreenManufacturer() {
 @Preview
 @Composable
 fun ScreenManufacturerPreview() {
-    ScreenManufacturer()
+    ScreenManufacturer(providerResources = AppResourceProvider(context = LocalContext.current))
 }
