@@ -2,4 +2,7 @@
     <string name="app_name">HookahBook</string>
 
     <string name="add">Добавить</string>
+    <string name="title_manufacturer">Произовитель</string>
+    <string name="title_tobacco">Табак</string>
+    <string name="title_mix">Миксы</string>
 </resources>

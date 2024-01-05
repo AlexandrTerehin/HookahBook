@@ -15,9 +15,11 @@ private val DarkColorPalette = darkColorScheme(
     primary = Blue,
     primaryContainer = Blue,
     onPrimary = White,
+    onPrimaryContainer = White,
     secondary = TextSecondaryColorDark,
     secondaryContainer = TextSecondaryColorDark,
-    onSecondary = Black,
+    onSecondary = White,
+    onTertiary = White,
 
     background = BackgroundBasicColorDark,
     onBackground = BackgroundBasicColorDark,
@@ -53,7 +55,7 @@ fun HookahBookTheme(
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {
-        LightColorPalette
+        DarkColorPalette
     }
 
     val typography = if (darkTheme) {
