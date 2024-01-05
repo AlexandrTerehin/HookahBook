@@ -16,10 +16,16 @@ data class ManufacturerDto(
     @DrawableRes val image: Int
 ) {
     companion object {
-        fun init() = ManufacturerDto(
+        fun initDarkside() = ManufacturerDto(
             id = 1,
             name = "Darkside",
             image = R.drawable.il_manufacturer_darkside
+        )
+
+        fun initBlackburn() = ManufacturerDto(
+            id = 1,
+            name = "BlackBurn",
+            image = R.drawable.il_manufacturer_blackburn
         )
     }
 }

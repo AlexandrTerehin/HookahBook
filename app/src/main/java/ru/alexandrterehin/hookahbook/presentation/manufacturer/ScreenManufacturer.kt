@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -19,25 +20,8 @@ import ru.alexandrterehin.hookahbook.provider.ResourceProvider
 @Composable
 fun ScreenManufacturer(providerResources: ResourceProvider) {
     val list = listOf(
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
-        ManufacturerDto.init(),
+        ManufacturerDto.initDarkside(),
+        ManufacturerDto.initBlackburn()
     )
 
     LazyVerticalGrid(
@@ -45,17 +29,15 @@ fun ScreenManufacturer(providerResources: ResourceProvider) {
         modifier = Modifier
             .fillMaxSize()
     ) {
-        items(count = list.size) { index ->
-            list.forEach { item ->
-                Card(
-                    Modifier
-                        .padding(dimen16)
-                ) {
-                    Image(
-                        painter = painterResource(id = item.image),
-                        contentDescription = item.name
-                    )
-                }
+        items(list) { item ->
+            Card(
+                Modifier
+                    .padding(dimen16)
+            ) {
+                Image(
+                    painter = painterResource(id = item.image),
+                    contentDescription = item.name
+                )
             }
         }
     }

@@ -26,7 +26,7 @@ data class TobaccoDto(
             smell = "ADMIRAL ACBAR CEREAL — овсяная каша",
             iconUrl = "https://htreviews.org/uploads/objects/0/b4ad52985db996a54fee2e4502b918df73bf274b.webp",
             iconRes = "",
-            manufacturer = ManufacturerDto.init(),
+            manufacturer = ManufacturerDto.initDarkside(),
             strength = TobaccoStrengthDto.LIGHT
         )
     }

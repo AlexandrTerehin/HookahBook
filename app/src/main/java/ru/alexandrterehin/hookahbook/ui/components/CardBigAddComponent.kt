@@ -33,6 +33,7 @@ import ru.alexandrterehin.hookahbook.provider.ResourceProvider
 fun CardBigAddComponent(
     size: Dp = cardBig,
     paddings: ComponentPaddings = 0.toPaddings(),
+    weight: Float = 1f,
     providerResources: ResourceProvider,
     click: () -> Unit = {}
 ) {

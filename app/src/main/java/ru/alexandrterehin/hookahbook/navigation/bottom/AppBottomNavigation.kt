@@ -13,6 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import ru.alexandrterehin.hookahbook.app.theme.BackgroundAccentColorDark
 import ru.alexandrterehin.hookahbook.app.theme.BackgroundAdditionalColorDark
+import ru.alexandrterehin.hookahbook.app.theme.BackgroundErrorColorDark
 import ru.alexandrterehin.hookahbook.app.theme.BackgroundSelectedColorDark
 
 @Composable
@@ -26,7 +27,10 @@ fun AppBottomNavigation(
         val currentRoute = backStackEntry?.destination?.route
 
         BottomItem.listItems.forEach { item ->
+            val enabled = item != BottomItem.ScreenMix
+
             NavigationBarItem(
+                enabled = enabled,
                 alwaysShowLabel = false,
                 selected = currentRoute == item.route,
                 onClick = {
@@ -36,7 +40,7 @@ fun AppBottomNavigation(
                     Icon(
                         painter = painterResource(id = item.iconId),
                         contentDescription = "icon",
-                        tint = BackgroundAccentColorDark
+                        tint = if (enabled) BackgroundAccentColorDark else BackgroundErrorColorDark
                     )
                 },
                 label = {

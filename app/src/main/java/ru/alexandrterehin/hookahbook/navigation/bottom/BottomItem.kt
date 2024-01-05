@@ -16,8 +16,8 @@ sealed class BottomItem(val title: String, @DrawableRes val iconId: Int, val rou
     object ScreenManufacturer :
         BottomItem("Производители", R.drawable.ic_24_manufacturing, Routers.SCREEN_MANUFACTURER)
 
-    object ScreenSmell : BottomItem("Вкусы", R.drawable.ic_24_home, Routers.SCREEN_SMELL)
-    object ScreenMix : BottomItem("Миксы", R.drawable.ic_24_home, Routers.SCREEN_MIX)
+    object ScreenSmell : BottomItem("Вкусы", R.drawable.ic_24_density_small, Routers.SCREEN_SMELL)
+    object ScreenMix : BottomItem("Миксы", R.drawable.ic_24_block, Routers.SCREEN_MIX)
 
     companion object {
         /**
