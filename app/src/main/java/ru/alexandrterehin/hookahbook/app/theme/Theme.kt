@@ -2,7 +2,6 @@ package ru.alexandrterehin.hookahbook.app.theme
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
@@ -16,12 +15,12 @@ private val DarkColorPalette = darkColorScheme(
     primary = Blue,
     primaryContainer = Blue,
     onPrimary = White,
-    secondary = Red,
-    secondaryContainer = RedDark,
+    secondary = TextSecondaryColorDark,
+    secondaryContainer = TextSecondaryColorDark,
     onSecondary = Black,
 
-    background = BackgroundDark,
-    onBackground = BackgroundDark,
+    background = BackgroundBasicColorDark,
+    onBackground = BackgroundBasicColorDark,
 
     surface = CardDark,
     onSurface = CardDark
@@ -32,28 +31,22 @@ private val LightColorPalette = lightColorScheme(
     primary = White,
     primaryContainer = Red,
     onPrimary = Black,
-    secondary = Red,
-    secondaryContainer = Red,
+    secondary = TextSecondaryColorDark,
+    secondaryContainer = TextSecondaryColorDark,
     onSecondary = Black,
 
-    background = BackgroundLight,
-    onBackground = BackgroundLight,
+    background = BackgroundBasicColorDark,
+    onBackground = BackgroundBasicColorDark,
 
-    surface = White,
-    onSurface = White
+    surface = BackgroundAdditionalColorDark,
+    onSurface = BackgroundAdditionalColorDark
 )
 
-val JetRortyColors: ColorScheme
-    @Composable get() = MaterialTheme.colorScheme
-
-val JetRortyShapes: Shapes
-    @Composable get() = MaterialTheme.shapes
-
-val JetRortyTypography: Typography
+val HookahBookTypography: Typography
     @Composable get() = MaterialTheme.typography
 
 @Composable
-fun JetRortyTheme(
+fun HookahBookTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {

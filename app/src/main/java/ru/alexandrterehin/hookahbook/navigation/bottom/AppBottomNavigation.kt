@@ -1,6 +1,5 @@
 package ru.alexandrterehin.hookahbook.navigation.bottom
 
-import androidx.compose.foundation.background
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -8,25 +7,27 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import ru.alexandrterehin.hookahbook.app.theme.BackgroundAccentColorDark
+import ru.alexandrterehin.hookahbook.app.theme.BackgroundAdditionalColorDark
+import ru.alexandrterehin.hookahbook.app.theme.BackgroundSelectedColorDark
 
 @Composable
 fun AppBottomNavigation(
     navController: NavController
 ) {
     NavigationBar(
-        Modifier.background(color = Color.White)
+        containerColor = BackgroundAdditionalColorDark
     ) {
         val backStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = backStackEntry?.destination?.route
 
         BottomItem.listItems.forEach { item ->
             NavigationBarItem(
+                alwaysShowLabel = false,
                 selected = currentRoute == item.route,
                 onClick = {
                     navController.navigate(item.route)
@@ -34,7 +35,8 @@ fun AppBottomNavigation(
                 icon = {
                     Icon(
                         painter = painterResource(id = item.iconId),
-                        contentDescription = "icon"
+                        contentDescription = "icon",
+                        tint = BackgroundAccentColorDark
                     )
                 },
                 label = {
@@ -44,8 +46,8 @@ fun AppBottomNavigation(
                     )
                 },
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = Color.Red,
-                    unselectedIconColor = Color.Gray
+                    selectedIconColor = BackgroundSelectedColorDark,
+                    unselectedIconColor = BackgroundAdditionalColorDark
                 )
             )
         }

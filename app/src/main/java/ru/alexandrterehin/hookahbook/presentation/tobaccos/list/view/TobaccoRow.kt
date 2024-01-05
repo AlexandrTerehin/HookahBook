@@ -15,18 +15,16 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import ru.alexandrterehin.hookahbook.app.theme.JetRortyTheme
-import ru.alexandrterehin.hookahbook.app.theme.JetRortyTypography
+import ru.alexandrterehin.hookahbook.app.theme.HookahBookTheme
+import ru.alexandrterehin.hookahbook.app.theme.HookahBookTypography
 import ru.alexandrterehin.hookahbook.data.model.tobacco.TobaccoDto
 import ru.alexandrterehin.hookahbook.provider.AppResourceProvider
 import ru.alexandrterehin.hookahbook.provider.ResourceProvider
@@ -83,7 +81,7 @@ fun TobaccoRow(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 2.dp),
-                    style = JetRortyTypography.labelMedium
+                    style = HookahBookTypography.labelMedium
                 )
 
             }
@@ -102,7 +100,7 @@ fun TobaccoRow(
 )
 @Composable
 fun TobaccoRowPreview() {
-    JetRortyTheme {
+    HookahBookTheme {
         TobaccoRow(dto = TobaccoDto.init(), provider = AppResourceProvider(LocalContext.current))
     }
 }
