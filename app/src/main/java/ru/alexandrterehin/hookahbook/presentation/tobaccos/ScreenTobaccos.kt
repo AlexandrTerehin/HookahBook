@@ -9,67 +9,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import ru.alexandrterehin.hookahbook.R
 import ru.alexandrterehin.hookahbook.app.theme.dimen16
+import ru.alexandrterehin.hookahbook.data.test_data.DBModels
 import ru.alexandrterehin.hookahbook.provider.AppResourceProvider
 import ru.alexandrterehin.hookahbook.provider.ResourceProvider
 import ru.alexandrterehin.hookahbook.ui.components.CellComponent
-import ru.alexandrterehin.hookahbook.ui.components.CellModel
 
 @Composable
 fun ScreenTobaccos(providerResources: ResourceProvider) {
-    val list = listOf(
-        CellModel(
-            imageRes = R.drawable.il_tobacco_admiral_acbar,
-            imageDescription = "Tobacco admiral acbar",
-            title = "Tobacco Admiral Acbar"
-        ),
-        CellModel(
-            imageRes = R.drawable.il_tobacco_admiral_acbar,
-            imageDescription = "Tobacco admiral acbar",
-            title = "Tobacco Admiral Acbar"
-        ),
-        CellModel(
-            imageRes = R.drawable.il_tobacco_admiral_acbar,
-            imageDescription = "Tobacco admiral acbar",
-            title = "Tobacco Admiral Acbar"
-        ),
-        CellModel(
-            imageRes = R.drawable.il_tobacco_admiral_acbar,
-            imageDescription = "Tobacco admiral acbar",
-            title = "Tobacco Admiral Acbar"
-        ),
-        CellModel(
-            imageRes = R.drawable.il_tobacco_admiral_acbar,
-            imageDescription = "Tobacco admiral acbar",
-            title = "Tobacco Admiral Acbar"
-        ),
-        CellModel(
-            imageRes = R.drawable.il_tobacco_admiral_acbar,
-            imageDescription = "Tobacco admiral acbar",
-            title = "Tobacco Admiral Acbar"
-        ),
-        CellModel(
-            imageRes = R.drawable.il_tobacco_admiral_acbar,
-            imageDescription = "Tobacco admiral acbar",
-            title = "Tobacco Admiral Acbar"
-        ),
-        CellModel(
-            imageRes = R.drawable.il_tobacco_admiral_acbar,
-            imageDescription = "Tobacco admiral acbar",
-            title = "Tobacco Admiral Acbar"
-        ),
-        CellModel(
-            imageRes = R.drawable.il_tobacco_admiral_acbar,
-            imageDescription = "Tobacco admiral acbar",
-            title = "Tobacco Admiral Acbar"
-        ),
-        CellModel(
-            imageRes = R.drawable.il_tobacco_admiral_acbar,
-            imageDescription = "Tobacco admiral acbar",
-            title = "Tobacco Admiral Acbar"
-        )
-    )
+    val list = DBModels.getTobacco().map { tobacco -> tobacco.toCellModel() }
+
 
     Column(
         modifier = Modifier
