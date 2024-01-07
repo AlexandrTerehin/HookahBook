@@ -1,5 +1,3 @@
-import com.android.ide.common.repository.main
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -47,6 +45,12 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    sourceSets {
+        getByName("main") {
+            res.srcDirs("src/main/res", "src/main/illustrations", "src/main/icons")
         }
     }
 }

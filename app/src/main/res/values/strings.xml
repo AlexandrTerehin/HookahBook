@@ -5,4 +5,7 @@
     <string name="title_manufacturer">Произовитель</string>
     <string name="title_tobacco">Табак</string>
     <string name="title_mix">Миксы</string>
+
+    <string name="prefix_manufacturer">произовитель %1$s</string>
+    <string name="prefix_strength">крепость %1$s</string>
 </resources>

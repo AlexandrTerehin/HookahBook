@@ -27,6 +27,14 @@ interface ResourceProvider {
     fun getString(@StringRes id: Int): String
 
     /**
+     * TODO
+     *
+     * @param id
+     * @return
+     */
+    fun getStringParams(id: Int, vararg params: Any): String
+
+    /**
      * Получить drawable
      *
      * @param id идентификатор ресурса изображения

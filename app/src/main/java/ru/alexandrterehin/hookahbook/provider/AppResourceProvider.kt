@@ -19,6 +19,9 @@ internal class AppResourceProvider(private val context: Context) : ResourceProvi
 
     override fun getString(id: Int): String = context.getString(id)
 
+    override fun getStringParams(id: Int, vararg params: Any): String =
+        context.resources.getString(id, params)
+
     override fun getDrawable(id: Int): Drawable? = context.getDrawable(id)
 
     override fun getDrawableByName(nameRes: String): Drawable? =

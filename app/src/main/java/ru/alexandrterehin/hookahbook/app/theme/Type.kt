@@ -6,6 +6,30 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
+val CellTextTitle = TextStyle(
+    color = TextPrimaryColorDark,
+    fontSize = 16.sp,
+    lineHeight = 20.sp,
+    fontWeight = FontWeight(500),
+    letterSpacing = 0.2.sp
+)
+
+val CellTextSubtitle = TextStyle(
+    color = TextSecondaryColorDark,
+    fontSize = 14.sp,
+    lineHeight = 16.sp,
+    fontWeight = FontWeight(400),
+    letterSpacing = 0.2.sp
+)
+
+val CellTextComment = TextStyle(
+    color = TextPrimaryColorDark,
+    fontSize = 14.sp,
+    lineHeight = 16.sp,
+    fontWeight = FontWeight(400),
+    letterSpacing = 0.2.sp
+)
+
 val DarkTypography = Typography(
     displayLarge = TextStyle(
         fontFamily = RalewayFonts,

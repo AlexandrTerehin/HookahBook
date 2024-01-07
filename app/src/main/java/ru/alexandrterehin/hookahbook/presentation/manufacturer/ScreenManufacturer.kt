@@ -13,16 +13,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import ru.alexandrterehin.hookahbook.app.theme.dimen16
-import ru.alexandrterehin.hookahbook.data.model.manufacturer.ManufacturerDto
+import ru.alexandrterehin.hookahbook.data.test_data.DBModels
 import ru.alexandrterehin.hookahbook.provider.AppResourceProvider
 import ru.alexandrterehin.hookahbook.provider.ResourceProvider
 
 @Composable
 fun ScreenManufacturer(providerResources: ResourceProvider) {
-    val list = listOf(
-        ManufacturerDto.initDarkside(),
-        ManufacturerDto.initBlackburn()
-    )
+    val list = DBModels.getManufacturer()
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
